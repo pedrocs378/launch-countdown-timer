@@ -27,4 +27,16 @@ export const Container = styled.footer`
 			}
 		}
 	}
+
+	@media (min-width: 720px) {
+		a svg {
+			height: 1.5rem;
+			width: 1.5rem;
+		}	
+	}
+
+	@media (min-width: 1440px) {
+		background-size: contain;
+		background-position: center;	
+	}
 `

@@ -40,4 +40,8 @@ export const GlobalStyles = createGlobalStyle`
 	body, input, textarea, select, button {
 		font: 700 1rem "Red Hat Text", sans-serif;
 	}
+
+	button {
+		cursor: pointer;
+	}
 `

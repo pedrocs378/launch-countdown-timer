@@ -1,31 +1,7 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-	height: 100vh;
-`
-
-export const CountdownContainer = styled.main`
-	height: 75vh;
-	max-width: 1440px;
-	margin: 0 auto;
-	background: url('/images/bg-stars.svg') no-repeat center;
-
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-
-	h1 {
-		font-size: 1.5rem;
-		text-transform: uppercase;
-		text-align: center;
-		letter-spacing: 5px;
-		max-width: 450px;
-	}
-`
-
-export const Countdown = styled.div`
-	margin-top: 5rem;
+	margin-top: 6rem;
 
 	display: flex;
 	align-items: center;
@@ -37,6 +13,7 @@ export const Countdown = styled.div`
 			text-align: center;
 			text-transform: uppercase;
 			color: var(--blue-200);
+			letter-spacing: 5px;
 		}
 
 		& + div {
@@ -56,5 +33,18 @@ export const Countdown = styled.div`
 
 		font-size: 2rem;
 		color: var(--red);
+	}
+
+	@media (min-width: 720px) {
+		div p {
+			font-size: 0.8rem;
+		}
+
+		span {
+			height: 7rem;
+			width: 7rem;
+
+			font-size: 3.5rem;
+		}
 	}
 `
