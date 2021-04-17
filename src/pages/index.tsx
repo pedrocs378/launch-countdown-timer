@@ -1,4 +1,6 @@
+import { GetServerSideProps } from 'next'
 import Head from 'next/head'
+import Cookies from 'cookies'
 
 import { CountdownProvider } from '../hooks/useCountdown'
 
@@ -7,7 +9,11 @@ import { Footer } from '../components/Footer'
 
 import { Container, CountdownContainer } from '../styles/home'
 
-export default function Home() {
+interface HomeProps {
+  time: number
+}
+
+export default function Home({ time }: HomeProps) {
 
   return (
     <>
@@ -16,7 +22,7 @@ export default function Home() {
       </Head>
 
       <Container>
-        <CountdownProvider>
+        <CountdownProvider initialTime={time ?? 60 * 60 * 336}>
           <CountdownContainer>
             <h1>We're launching soon</h1>
 
@@ -28,4 +34,15 @@ export default function Home() {
       </Container>
     </>
   )
+}
+
+export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
+  const cookies = new Cookies(req, res)
+  const timeStoraged = cookies.get('@CountdownApp:countdown')
+
+  console.log(timeStoraged)
+
+  return {
+    props: { time: timeStoraged }
+  }
 }
