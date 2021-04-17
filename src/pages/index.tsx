@@ -1,5 +1,7 @@
 import Head from 'next/head'
 
+import { CountdownProvider } from '../hooks/useCountdown'
+
 import { Countdown } from '../components/Countdown'
 import { Footer } from '../components/Footer'
 
@@ -14,11 +16,13 @@ export default function Home() {
       </Head>
 
       <Container>
-        <CountdownContainer>
-          <h1>We're launching soon</h1>
+        <CountdownProvider>
+          <CountdownContainer>
+            <h1>We're launching soon</h1>
 
-          <Countdown />
-        </CountdownContainer>
+            <Countdown />
+          </CountdownContainer>
+        </CountdownProvider>
 
         <Footer />
       </Container>
