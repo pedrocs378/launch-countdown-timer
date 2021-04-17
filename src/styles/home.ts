@@ -19,12 +19,13 @@ export const CountdownContainer = styled.main`
 		font-size: 1.5rem;
 		text-transform: uppercase;
 		text-align: center;
-		letter-spacing: 5px;
+		letter-spacing: 8px;
 		max-width: 340px;
 	}
 
 	@media (min-width: 720px) {
 		h1 {
+			font-size: 1.3rem;
 			max-width: 100%;
 		}
 	}
