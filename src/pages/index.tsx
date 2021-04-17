@@ -40,8 +40,6 @@ export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
   const cookies = new Cookies(req, res)
   const timeStoraged = cookies.get('@CountdownApp:countdown')
 
-  console.log(timeStoraged)
-
   return {
     props: { time: timeStoraged }
   }
